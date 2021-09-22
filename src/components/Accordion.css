@@ -1,0 +1,21 @@
+.item-head {
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+    background-color: transparent;
+    appearance: none;
+}
+
+.item-body {
+    overflow: hidden;
+    transition: height 0.3s ease-in-out;
+}
+
+.item-content {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.item[aria-expanded='true'] .item-content {
+    opacity: 1;
+}
