@@ -12,7 +12,7 @@ export interface AccordionProps {
 }
 
 export const Accordion: React.FunctionComponent<Readonly<AccordionProps>> = (props: Readonly<AccordionProps>) => {
-    const [activeTab, setActiveTab] = React.useState(-1);
+    const [activeTab, setActiveTab] = React.useState(0);
     const { items} = props;
 
     const Items = () => (
@@ -21,11 +21,11 @@ export const Accordion: React.FunctionComponent<Readonly<AccordionProps>> = (pro
                 <div className="accordion" role="tablist" key={index}>
                     <AccordionItem
                         key={index}
-                        title={front}
+                        front={front}
                         index={index}
                         activeTab={activeTab}
                         activateItem={(i: number): void => {
-                            setActiveTab(activeTab === i ? -1 : i);
+                            setActiveTab(activeTab === i ? 0 : i);
                                 return;
                         }}
                     >

@@ -3,7 +3,7 @@ import { findDOMNode } from 'react-dom';
 
 export interface ItemProps {
     index: number;
-    title: React.ReactNode;
+    front: React.ReactNode;
     children?: React.ReactNode;
     activeTab: number;
     activateItem(index: number): void;
@@ -13,7 +13,7 @@ export const AccordionItem: React.FunctionComponent<Readonly<ItemProps>> = (prop
     const ref = React.useRef(null);
     const [height, setHeight] = React.useState(0);
     const [active, setActive] = React.useState(false);
-    const {title, children } = props;
+    const {front, children } = props;
     const isActive = active;
     const innerStyle = {
         height: `${isActive ? height : 0}px`
@@ -41,7 +41,7 @@ export const AccordionItem: React.FunctionComponent<Readonly<ItemProps>> = (prop
                     setActive(!active);
                 }}
             >
-                {title}
+                {front}
             </button>
 
             <div style={innerStyle} className="item-body" aria-hidden={!isActive}>
